@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="play" onclick="play()">Chơi</button>
+<script>
+    function play() {
+        let from = parseInt(prompt("Đoán từ khoảng từ: "));
+        let to = parseInt(prompt("Tới: "));
+        let pick = parseInt(prompt("Đoán: "));
+        let num = Math.floor(Math.random() * (to - from + 1)) + from;
+
+        for (let i = 0; i < 3; i++) {
+            if (pick == num) {
+                alert("Chuc Mung!");
+                break;
+            } else if (pick > num) {
+                alert("Lon hon!");
+                if(i==2)
+                    break;
+                else
+                    pick = parseInt(prompt("Doan lai:"));
+            } else {
+                alert("Be hon!");
+                if(i==2)
+                    break;
+                else
+                    pick = parseInt(prompt("Doan lai: "));
+            }
+        }
+    }
+
+</script>
+</body>
+</html>
